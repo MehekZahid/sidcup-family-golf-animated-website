@@ -8,8 +8,25 @@
 html,body{
     height: 100%;
     width: 100%;
-   
+   perspective: 800px;
 }
+*::selection {
+  background-color: #fff;
+  color: #95c11e;
+}
+body::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+  background: #95c11e;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+   border-radius: 50px;
+}
+body {
+  overflow-x: hidden;
+}
+
 #cursor{
     position: fixed;
     height: 18px;
@@ -96,6 +113,28 @@ video {
     font-size: 15px;
     font-weight: 500;
     width: 30%;
+  }
+  #page1 #arrow {
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #95c11e;
+    position: absolute;
+    display: flex;
+    left: -2%;
+    bottom: -2%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+  }
+  #page1 #arrow i {
+    font-size: 35px;
+    font-weight: 100;
+  }
+  #page1 #arrow:hover {
+    scale: 0.4;
+    background-color: #95c11e;
   }
   
   #page2{
@@ -219,10 +258,11 @@ margin-bottom: 40px;
   width: 100%;
   background-color: #96c11ed1;
   padding: 40px;
-  
   padding-top: 80px;
   opacity: 0;
   transition: all ease 0.4s;
+  pointer-events: none;
+  position: absolute;
 }
 .overlay h4{
   color: black;
@@ -239,9 +279,11 @@ margin-bottom: 40px;
 .card:hover .overlay{
   opacity: 1;
 }
-.card:hover{
-  transform:rotate3d(-1, 2, 0, 20deg);
+.card:hover {
+  transform: rotate3d(-3, 2, 0, 30deg);
 }
+
+
 #green-div{
   height: 26vh;
   width: 100%;
@@ -282,13 +324,123 @@ margin-bottom: 40px;
  
 }
 #page3 img{
-  height: 40px;
+  height: 35px;
   position: absolute;
 }
  #colon1{
-  top: 25%;
+  top: 27%;
   left: 20%;
 }
  #colon2{
-  bottom: 25%;
+  bottom: 27%;
   right: 20%;}
+
+  #page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .elem {
+    height: 70%;
+    width: 24%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .elem h2 {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    display: flex;
+    color: #000;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+    font-size: 2vw;
+    position: absolute;
+    z-index: 10;
+  }
+  .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+  }
+  .elem:hover h2 {
+    color: #fff;
+    background-color: transparent;
+  }
+  .elem:hover img {
+    scale: 1;
+  }
+  #page4 h1 {
+    font-size: 5vw;
+    position: absolute;
+    top: -20%;
+    font-weight: 900;
+    font-family: gilroy;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+  }
+
+  #footer{
+    height: 35vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+   
+  }
+  #footer > img {
+    position: absolute;
+    left: 0;
+    height: 30vh;
+    z-index: 0;
+  }
+  #f1 img {
+    height: 90px;
+  }
+   
+#f1,#f2,#f3,#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+}
+
+#f2 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+#f3 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+#f4 h4 {
+  font-size: 1.5vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
